@@ -1,0 +1,69 @@
+/*-----------------framework-start-----------------*/
+@include createCol();
+@include createOffset();
+
+.d-flex {
+    display: flex;
+}
+
+.f-w {
+    flex-wrap: wrap;
+}
+
+.f-c {
+    flex-direction: column;
+}
+
+.f-r {
+    flex-direction: row;
+}
+
+.j-c-e {
+    justify-content: flex-end;
+}
+.j-c-s {
+    justify-content: flex-start;
+}
+
+.j-c-sa {
+    justify-content: space-around;
+}
+
+.j-c-c {
+    justify-content: center;
+}
+
+.j-c-sb {
+    justify-content: space-between;
+}
+
+.a-i-sa {
+    align-items: space-around;
+}
+
+.a-i-c {
+    align-items: center;
+}
+
+.a-i-sb {
+    align-items: space-between;
+}
+
+/*-----------------framework-end-----------------*/
+body{
+    overflow-x: hidden;
+    max-width: 100vw;
+    height:200vh;
+    background-color: #fafafac2;
+}
+h1,h2,h3{
+    font-size: pxToRem(32);
+}
+h1,h2,h3,p,a,ul{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    font-weight: 400;
+}
+p{
+    font-size: pxToRem(14);
+}

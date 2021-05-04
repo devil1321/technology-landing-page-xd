@@ -56,6 +56,9 @@ body{
     height:200vh;
     background-color: #fafafac2;
 }
+a:active{
+    color:black;
+}
 h1,h2,h3{
     font-size: pxToRem(32);
 }

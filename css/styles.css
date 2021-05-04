@@ -5,6 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -539,6 +540,7 @@ h1, h2, h3, p, a, ul {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-decoration: none;
   font-weight: 400;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 p {
@@ -989,6 +991,8 @@ p {
       flex-basis: 100%;
   padding: 0px 100px;
   background-color: #e5ddf1;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .container .contact__article-text p {
@@ -1038,7 +1042,7 @@ p {
 }
 
 .container .contact__input input {
-  padding-left: 15px;
+  padding: 0px 15px;
   width: 60%;
   height: 20px;
   border: none;
@@ -1068,7 +1072,77 @@ p {
 }
 
 .container .footer {
-  padding: 0px 80px;
-  height: 300px;
+  position: relative;
+  top: -70px;
+  left: 0px;
+  z-index: -1;
+  padding: 100px 80px 30px;
+  background-color: #e5ddf1;
+}
+
+.container .footer__column-1 {
+  width: 150px;
+}
+
+.container .footer__column-1 img {
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.container .footer__column-1 .icon-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+  width: 30px;
+  background-color: #f1f1f1;
+  -webkit-box-shadow: 0px 0px 2px inset #7e7e7e;
+          box-shadow: 0px 0px 2px inset #7e7e7e;
+  border-radius: 50px;
+}
+
+.container .footer__column-1 i {
+  color: darkgray;
+}
+
+.container .footer__column-2 p:first-of-type, .container .footer__column-3 p:first-of-type, .container .footer__column-4 p:first-of-type {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.container .footer__column-2 ul, .container .footer__column-3 ul, .container .footer__column-4 ul {
+  list-style-type: none;
+  margin-left: -40px;
+}
+
+.container .footer__column-2 ul li, .container .footer__column-3 ul li, .container .footer__column-4 ul li {
+  margin: 10px 0px;
+}
+
+.container .footer__column-2 ul li a, .container .footer__column-3 ul li a, .container .footer__column-4 ul li a {
+  color: #535353;
+}
+
+.container .footer__column-2 ul li a:hover, .container .footer__column-3 ul li a:hover, .container .footer__column-4 ul li a:hover {
+  color: darkgray;
+}
+
+.container .footer .row-bottom P {
+  font-size: 0.625rem;
+}
+
+.container .footer .row-bottom .wrapper {
+  width: 200px;
+}
+
+.container .footer .row-bottom .divider {
+  height: 10px;
+  border-left: 2px solid gray;
 }
 /*# sourceMappingURL=styles.css.map */

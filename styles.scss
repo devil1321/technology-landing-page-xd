@@ -370,6 +370,7 @@
             flex-basis: 100%;
             padding:0px 100px;
             background-color: rgb(229, 221, 241);
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
             p{
                 width: 65%;
                 line-height: 1.5;
@@ -408,7 +409,7 @@
             background-color: whitesmoke;
             border-radius: 25px;
             input{
-                padding-left: 15px;
+                padding:0px 15px;
                 width: 60%;
                 height: 20px;
                 border:none;
@@ -435,7 +436,64 @@
         }
     }
     .footer{
-        padding:0px 80px;
-        height: 300px;
+        position: relative;
+        top:-70px;
+        left:0px;
+        z-index: -1;
+        padding:100px 80px 30px;
+        background-color: rgb(229, 221, 241);
+        &__column-1{
+            width: 150px;
+            img{
+                margin: 10px 0px;
+                width: 100%;
+            }
+            .icon-wrapper{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height:30px;
+                width: 30px;
+                background-color: #f1f1f1;
+                box-shadow: 0px 0px 2px inset rgb(126, 126, 126);
+                border-radius: 50px;
+            }
+            i{
+                color:darkgray;
+            }
+        }
+        &__column-2,
+        &__column-3,
+        &__column-4{
+            p:first-of-type{
+                font-weight: bold;
+                margin-bottom: 30px;
+            }
+            ul{
+                list-style-type: none;
+                margin-left: -40px;
+                li{
+                    margin: 10px 0px;
+                    a{
+                        color:rgb(83, 83, 83);
+                        &:hover{
+                            color:darkgray;
+                        }
+                    }
+                }
+            }
+        }
+        .row-bottom{
+            P{
+                font-size:pxToRem(10);
+            }
+            .wrapper{
+                width: 200px;
+            }
+            .divider{
+                    height: 10px;
+                    border-left: 2px solid gray;
+                }
+        }
     }
 }

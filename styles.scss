@@ -285,5 +285,30 @@
                 margin-left: 10px;
             }
         }
+        &__subtitle{
+            width: 60% !important;
+            line-height: 1.5;
+        }
+        &__inner-text{
+            margin: 10px 0px;
+        }
+        &__inner-cards{
+            margin:50px 0px 100px;
+            padding-bottom: 100px;
+        }
+        &__inner-card{
+            cursor: pointer;
+            width: 250px;
+            padding:20px;
+            border-top-left-radius: 80px;
+            border-bottom-right-radius: 80px;
+            transition: all 200ms ease-in-out;
+            &:hover{
+                box-shadow: 0px 0px 10px rgba(0,0,0,0.10);
+            }
+            img{
+                width: 80%;
+            }
+        }
     }
 }

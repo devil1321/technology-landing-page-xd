@@ -3,23 +3,23 @@ $breakpoints-up:("medium":"40em", "large":"64.5em", "xlarge":"87.5em");
 // 639px 1023px 1399px
 $breakpoints-down:("small":"39.9375em", "sm-med":"33.75em","medium-sm":"63em","medium":"64em", "large":"85.4375em");
 @mixin breakpoint-up($size) {
-    @media(min-width: map-get($breakpoints-up, $size)) {
+    @media(min-device-width: map-get($breakpoints-up, $size)) {
         @content;
     }
 }
 
 @mixin breakpoint-down($size) {
-    @media(max-width: map-get($breakpoints-down, $size)) {
+    @media(max-device-width: map-get($breakpoints-down, $size)) {
         @content;
     }
 }
 @mixin breakpoint-down-l($size) {
-    @media(max-width: map-get($breakpoints-down, $size)) and (orientation:landscape) {
+    @media(max-device-width: map-get($breakpoints-down, $size)) and (orientation:landscape) {
         @content;
     }
 }
 @mixin breakpoint-up-l($size) {
-    @media(min-width: map-get($breakpoints-down, $size)) and (orientation:landscape) {
+    @media(min-device-width: map-get($breakpoints-down, $size)) and (orientation:landscape) {
         @content;
     }
 }
@@ -28,23 +28,17 @@ $breakpoints-down:("small":"39.9375em", "sm-med":"33.75em","medium-sm":"63em","m
     @return ($pxsize / $rembase) + rem;
 }
 
-
-@mixin createCol(){
-    @each $size in $sizes{
-        $index:index($sizes, $size);
-        .col-#{$index} {
-            width:$size;
-        }
-    }
-}
 @mixin set-container{
     min-height: 100vh;
     padding:$pad-sm-md;
 }
+
 @mixin createOffset(){
+    $i:0;
     @each $offset in $offsets{
         $index:index($offset, $offsets);
-        .offset-#{$index} {
+        $i:$i+1;
+        .offset-#{$i} {
             width:$offset;
         }
     }

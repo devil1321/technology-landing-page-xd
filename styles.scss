@@ -827,10 +827,8 @@
             .row{
                 flex-wrap: wrap;
                 justify-content: center;
-                @media (max-device-width:320px) {
                     display: block;
-                    text-align: center;
-                }
+                    text-align: center;   
             }
             &__column-1{
                 min-width: 100%;

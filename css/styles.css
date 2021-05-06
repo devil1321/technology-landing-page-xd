@@ -1697,17 +1697,9 @@ p {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-}
-
-@media (max-device-width: 39.9375em) and (max-device-width: 320px) {
-  .container .footer .row {
     display: block;
     text-align: center;
   }
-}
-
-@media (max-device-width: 39.9375em) {
   .container .footer__column-1 {
     min-width: 100%;
   }

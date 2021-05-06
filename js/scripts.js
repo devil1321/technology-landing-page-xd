@@ -33,10 +33,10 @@ const handleNav = () =>{
         overlay.style.opacity = '1'
         overlay.style.visibility = 'visible'
         if(window.innerHeight < window.innerWidth){
-            navList.style.height = "85vh"
+            navList.style.height = "90vh !important"
         }
         else if(window.innerWidth < 768){
-            navList.style.height = "45vh"
+            navList.style.height = "45vh !important"
         }
 
         time = 0;

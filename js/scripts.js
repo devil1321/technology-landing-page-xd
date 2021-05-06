@@ -46,7 +46,6 @@ const handleNav = () =>{
             },time+=120)
         })
     }else{
-        navBtn.classList.remove('open')
         navItems.forEach(item=> item.style.opacity = 0)
         navList.style.height = "0vh"
         overlay.style.opacity = '0'

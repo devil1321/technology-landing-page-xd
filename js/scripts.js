@@ -13,18 +13,27 @@ navItems.forEach(item=>item.addEventListener('mouseleave',(e)=>{
     })
 }))
 
-// window.addEventListener('resize',(e)=>{
-//     if(window.innerWidth > 768){
-//         overlay.style.opacity = '0'
-//         overlay.style.visibility = 'hidden'
-//         navBtn.classList.remove('open')
-//         navList.style.height = "100%"
-//         navItems.forEach(item=>item.style.opacity = 1)
-//     }else if(window.innerWidth <= 768){
-//         navItems.forEach(item=> item.style.opacity = 0)
-//         navList.style.height = "0vh"    
-//     }
-// })
+window.addEventListener('resize',(e)=>{
+    let userHasScrolled = false
+    window.onscroll = function (e){
+        userHasScrolled = true;
+    }
+    if(!userHasScrolled){
+        if(window.innerWidth > 768){
+            overlay.style.opacity = '0'
+            overlay.style.visibility = 'hidden'
+            navBtn.classList.remove('open')
+            navList.style.height = "100%"
+            navItems.forEach(item=>item.style.opacity = 1)
+        }else if(window.innerWidth <= 768){
+            navItems.forEach(item=> item.style.opacity = 0)
+            navList.style.height = "0vh"    
+            navBtn.classList.remove('open')
+            overlay.style.opacity = '0'
+            overlay.style.visibility = 'hidden'
+        }
+    }
+})
 
 const handleNav = () =>{
     navBtn.classList.toggle('open')

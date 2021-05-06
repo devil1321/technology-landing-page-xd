@@ -13,7 +13,9 @@ navItems.forEach(item=>item.addEventListener('mouseleave',(e)=>{
     })
 }))
 
-window.addEventListener('resize',()=>{
+window.addEventListener('resize',(e)=>{
+    e.preventDefault()
+    e.stopPropagation()
     if(window.innerWidth > 768){
         overlay.style.opacity = '0'
         overlay.style.visibility = 'hidden'
@@ -26,7 +28,9 @@ window.addEventListener('resize',()=>{
     }
 })
 
-const handleNav = () =>{
+const handleNav = (e) =>{
+    e.preventDefault()
+    e.stopPropagation()
     navBtn.classList.toggle('open')
     if(navBtn.classList.contains('open')){
         navList.style.height = "30vh"
@@ -53,4 +57,4 @@ const handleNav = () =>{
 
     }
 }
-navBtn.addEventListener('click',handleNav)
+navBtn.addEventListener('click',(e)=>handleNav(e))

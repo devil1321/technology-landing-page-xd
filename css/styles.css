@@ -509,10 +509,9 @@ p {
   position: relative;
   left: 0px;
   top: 0px;
-  background-image: url("/assets/woman.png");
+  background-image: url("../assets/woman.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-x: -120px;
 }
 
 @media (max-device-width: 64em) {
@@ -536,7 +535,7 @@ p {
   top: 20px;
   height: 120%;
   width: 100%;
-  background-image: url("/assets/Path 2.svg");
+  background-image: url("../assets/Path 2.svg");
   background-size: 106% 106%;
   background-position: -12px -55px;
   background-repeat: no-repeat;
@@ -563,11 +562,10 @@ p {
   top: 0px;
   height: 100%;
   width: 100%;
-  background-image: url("/assets/overlay.svg");
+  background-image: url("../assets/overlay.svg");
   opacity: 0.75;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-x: -120px;
 }
 
 @media (max-device-width: 63em) {
@@ -583,7 +581,7 @@ p {
   position: relative;
   left: 0px;
   top: 0px;
-  z-index: 10;
+  z-index: 11;
 }
 
 .container .header .nav__btn {
@@ -603,6 +601,8 @@ p {
     margin: 5px 0px;
     -webkit-transform-origin: 8px 2px;
             transform-origin: 8px 2px;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
   }
   .container .header .nav__btn.open span:first-of-type {
     -webkit-transform: rotate(45deg);
@@ -655,7 +655,39 @@ p {
 
 @media (max-device-width: 63em) {
   .container .header .nav__list {
-    display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1rem;
+    height: 30vh;
+    width: 80vw;
+    color: black;
+    position: absolute;
+    left: -4%;
+    top: 70px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3) inset;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3) inset;
+    border-radius: 10px;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }
+  .container .header .nav__list li {
+    padding: 3px 0px;
+    margin: 6px 0px;
+    margin-left: -40px;
   }
 }
 
@@ -666,6 +698,16 @@ p {
   top: 0px;
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
+  width: 100%;
+}
+
+@media (max-device-width: 63em) {
+  .container .header .nav__item {
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    background-color: #f1f1f1;
+  }
 }
 
 .container .header .nav__item:before {
@@ -828,9 +870,21 @@ p {
   margin: 25px auto;
 }
 
+@media (max-device-width: 63em) {
+  .container .feature h2 {
+    width: 100%;
+  }
+}
+
 .container .feature p:nth-child(2) {
   width: 50%;
   margin: 40px auto;
+}
+
+@media (max-device-width: 63em) {
+  .container .feature p:nth-child(2) {
+    width: 90%;
+  }
 }
 
 .container .feature__card {
@@ -906,6 +960,12 @@ p {
   text-align: left;
 }
 
+@media (max-device-width: 63em) {
+  .container .about__article {
+    margin: 20px 0px;
+  }
+}
+
 .container .about__article-placeholder {
   width: 100%;
   position: relative;
@@ -920,7 +980,7 @@ p {
   top: 12%;
   width: 100%;
   height: 70%;
-  background-image: url("/assets/blue-placeholder.svg");
+  background-image: url("../assets/blue-placeholder.svg");
   background-size: cover;
 }
 
@@ -1047,7 +1107,7 @@ p {
   z-index: -1;
   width: 60%;
   height: 70%;
-  background-image: url("/assets/blue-placeholder.svg");
+  background-image: url("../assets/blue-placeholder.svg");
   background-size: cover;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);

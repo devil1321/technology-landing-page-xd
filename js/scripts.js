@@ -30,6 +30,8 @@ const handleNavChange = () =>{
             navItems.forEach(item=> item.style.opacity = 0)
             navList.style.height = "0vh"    
             navBtn.classList.remove('open')
+            overlay.style.opacity = '0'
+            overlay.style.visibility = 'hidden'
         }
     }
 }

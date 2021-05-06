@@ -17,7 +17,6 @@ navItems.forEach(item=>item.addEventListener('mouseleave',(e)=>{
 const handleNav = () =>{
     if(!navBtn.classList.contains('open')){
         navBtn.classList.add('open')
-        navList.style.width = "80vw"
         navList.style.height = "30vh"
         overlay.style.opacity = '1'
         overlay.style.visibility = 'visible'
@@ -34,7 +33,6 @@ const handleNav = () =>{
     }else{
         navBtn.classList.remove('open')
         navItems.forEach(item=> item.style.opacity = 0)
-        navList.style.width = "0vw"
         navList.style.height = "0vh"
         overlay.style.opacity = '0'
         overlay.style.visibility = 'hidden'

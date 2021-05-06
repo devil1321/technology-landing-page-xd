@@ -9,6 +9,18 @@
 .container{
     max-width: 100vw;
     height: 100%;
+    .overlay{
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        top:0px;
+        left:0px;
+        width: 100vw;
+        height: 100vh;
+        z-index: 11;
+        background:linear-gradient(top,transparent,black);
+        transition: all 500ms ease-in-out;
+    }
     .header{
         height: 115vh;
         padding: 0px 80px;
@@ -18,12 +30,22 @@
         background-image: url('../assets/woman.png');
         background-size: cover;
         background-repeat: no-repeat;
+        @media (max-device-width:1366px) and (max-device-height:1024px) and(orientation:landscape) and (-webkit-min-device-pixel-ratio: 2){
+            height: 80vh;
+        }
         @include breakpoint-down(medium){
             height: 50vh;
+        }
+        @include breakpoint-down-l(medium){
+            height: 90vh;
         }
         @include breakpoint-down(medium-sm){
             height: 90vh;
             background-position: 50% 0%;
+        }
+        @include breakpoint-down(small){
+            height: 102vh;
+            padding: 0px 15px;
         }
         &::after{
             content: '';
@@ -37,13 +59,20 @@
             background-size: 106% 106%;
             background-position:-12px -55px;
             background-repeat: no-repeat;   
+            @media (max-device-width:1366px) and(max-device-height:1024px) and(orientation:landscape) and (-webkit-min-device-pixel-ratio: 2){
+                background-position:80px -45px;
+            }
             @include breakpoint-down(medium){
                 background-size: 116% 116%;
-                background-position: 0px -65px;
+                background-position: 30px -75px;
             }    
             @include breakpoint-down(medium-sm){
                 background-size: 136% 136%;
-                background-position: 20% -65px;
+                background-position: 30% -55px;
+            }
+            @include breakpoint-down(small){
+                background-size: 136% 136%;
+                background-position: 0% -10%;
             }
         }
         &::before{
@@ -60,6 +89,16 @@
             @include breakpoint-down(medium-sm){
                 background-size: 305%;
                 background-position: 45% -198px;
+            }
+            @include breakpoint-down(small){
+                background-position: 40% 70%;
+                background-size: 450%;
+            }
+            @media (max-device-width:411px) {
+                background-position: 40% 40%;
+            }
+            @media (max-device-width:320px) {
+                background-position: 40% 60%;
             }
         }
         .nav{   
@@ -80,6 +119,7 @@
                         width: 100%;
                         border:2px solid white;
                         margin:5px 0px;
+                        border-radius: 10px;
                         transform-origin: 8px 2px;
                         transition:all 300ms ease-in-out;
                     }
@@ -101,6 +141,7 @@
                 @include breakpoint-down(medium-sm){
                     justify-content: flex-start;
                 }
+         
             }
             &__logo{
                 width: 100px;
@@ -120,13 +161,16 @@
                 list-style-type: none;
                 color:white;
                 font-size: pxToRem(14);
+                @include breakpoint-down-l(medium){
+                    width: 70%;
+                }
                 @include breakpoint-down(medium-sm){
                     @include createFlex(column,center,center,null);
                     overflow: hidden;
                     text-align: center;
                     font-size: pxToRem(16);
-                    height: 30vh;
-                    width: 80vw;
+                    height: 0vh;
+                    width: 0vw;
                     color:black;
                     position: absolute;
                     left:-4%;
@@ -135,12 +179,10 @@
                     box-shadow: 0px 0px 10px rgba(0,0,0,0.3) inset;
                     border-radius: 10px;
                     transition: all 300ms ease-in-out;
-                    li{
-                        padding: 3px 0px;
-                        margin: 6px 0px;
-                        margin-left: -40px;
-                    }
-                };
+                }
+                @include breakpoint-down(small){
+                    left:2%;
+                }
                 
             }
             &__item{
@@ -149,11 +191,14 @@
                 left:0px;
                 top:0px;
                 transform-origin: 50% 50%;
-                width: 100%;
                 @include breakpoint-down(medium-sm){
+                    width: 100%;
                     transition: all 1s ease-in-out;
                     opacity: 0;
                     background-color: #f1f1f1;
+                    padding: 6px 0px;
+                    margin: 6px 0px;
+                    margin-left: -40px;
                 }
                 &:before{
                     visibility: hidden;
@@ -198,12 +243,13 @@
             @include breakpoint-down(medium-sm){
                 max-width: 100%;
             }
+            
             h1{
                 font-weight: 400;
             }
             p{
                 line-height: 1.2;
-                font-weight: 500;
+                font-weight: 500;   
             }
             
         }
@@ -246,12 +292,18 @@
             @include breakpoint-down(medium-sm){
                 position: relative;
                 left:0%;
-                top:50px;
+                top:80px;
+            }
+            @media (max-device-width:375px) {
+                display: none;
             }
             ul{
                 margin-left: 25px;
                 width: 100%;
                 list-style-type: none;
+                @include breakpoint-down(small){
+                    margin-left: 0px;
+                }
                 li{
                     width: 40%;
                     img{
@@ -267,6 +319,9 @@
                     @include breakpoint-down(medium){
                         margin: 0px -70px;
                     }
+                    @include breakpoint-down(small){
+                        margin: 0px -65px;
+                    }
                 }
             }
         }
@@ -274,7 +329,9 @@
     .feature{
         margin: 130px 0px 80px;
         text-align: center;
-      
+        @include breakpoint-down(small){
+            padding: 0px 15px;
+        }    
         h2{
           width: 40%;  
           margin: 25px auto;
@@ -287,6 +344,11 @@
             margin: 40px auto;
             @include breakpoint-down(medium-sm){
                 width: 90%;
+            }
+        }
+        &__cards{
+            @include breakpoint-down(small){
+                flex-wrap: wrap;
             }
         }
         &__card{
@@ -304,6 +366,15 @@
                 transform: translateY(-5px);
                 box-shadow: 0px 0px 20px rgba(0,0,0,0.10);
             }
+            @include breakpoint-down(medium-sm){
+                width: 28%;
+                margin: 0px 10px;
+            }
+            @include breakpoint-down(small){
+                width: 100%;
+                margin-top: 20px;
+            }
+  
             img{
                 height: 50%;    
             }
@@ -337,6 +408,9 @@
             @include breakpoint-down(medium){
                 width: 70%;
             }
+            @include breakpoint-down(small){
+                width: 90%;
+            }
         }
         &__article{
             margin-left: 100px;
@@ -344,11 +418,17 @@
             @include breakpoint-down(medium-sm){
                 margin:20px 0px;
             }
+            @include breakpoint-down(small){
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 50px;
+            }
             &-placeholder{
                 width: 100%;
                 position: relative;
                 top:0px;
                 left:0px;
+                
                 &::before{
                     content: '';
                     position: absolute;
@@ -371,9 +451,16 @@
         }
         &__article-text{
             text-align: left;
+            @include breakpoint-down(small){
+                width: 90%;
+            }
             h2{
                 margin: 0px;
                 width: 55%;
+                @include breakpoint-down(small){
+                    width: 90%;
+                    text-align: center;
+                }
             }
             p{
                 margin: 30px 0px !important;
@@ -398,14 +485,24 @@
         &__subtitle{
             width: 60% !important;
             line-height: 1.5;
+            @include breakpoint-down(small){
+                width: 90% !important;
+            }
         }
         &__inner-text{
             margin: 10px 0px;
+            @include breakpoint-down(small){
+                width: 95%;
+                margin:0px auto;
+            }
         }
         &__inner-cards{
             margin:50px 0px;
             @include breakpoint-down(medium){
                 padding:0px 80px;
+            }
+            @include breakpoint-down(small){
+                flex-wrap: wrap;
             }
         }
         &__inner-card{
@@ -415,6 +512,13 @@
             border-top-left-radius: 80px;
             border-bottom-right-radius: 80px;
             transition: all 200ms ease-in-out;
+            @include breakpoint-down(small){
+                padding: 30px;
+                min-width: 100%;
+                margin: 10px 0px;
+                margin-left: -10%;
+                box-shadow: 0px 0px 10px rgba(0,0,0,0.10);
+            }
             &:hover{
                 box-shadow: 0px 0px 10px rgba(0,0,0,0.10);
             }
@@ -426,11 +530,23 @@
     .portfolio{
         padding: 0px 80px;
         text-align: center;
+        @include breakpoint-down(small){
+            padding: 0px 15px;
+        }
         p{
             width: 50%;
             margin:0px auto;
             @include breakpoint-down(medium){
                 width: 80%;
+            }
+            @include breakpoint-down(small){
+                width: 100%;
+            }
+        }
+        &__cards{
+            @include breakpoint-down(small){
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
         &__card{
@@ -439,8 +555,12 @@
             @include breakpoint-down(medium){
                 margin: 0px -40px;
             }
+            @include breakpoint-down(small){
+                width: 50%;
+                padding: 0px 15px;
+            }
             img{
-                width: 100%;
+                width: 100%;   
             }
         }
         &__card:last-of-type{
@@ -459,6 +579,45 @@
                 background-size: cover;
                 transform: rotate(180deg);
             }
+            @media (max-device-width:320px){
+                &::before{
+                    right:-52%;
+                    top:14%;
+                    width: 78%;
+                    height: 80%;
+                }
+                &::after{
+                    content:'';
+                    position: absolute;
+                    top:10%;
+                    right:70%;
+                    z-index:-1;
+                    width: 80%;
+                    height: 80%;
+                    background-image: url('../assets/blue-placeholder.svg');
+                    background-size: cover;
+                    transform: rotate(0deg);
+                }
+            }
+        }
+        @include breakpoint-down(small){
+            &__card:first-of-type{
+                position:relative;
+                left:0px;
+                top:0px;
+                &::before{
+                    content:'';
+                    position: absolute;
+                    top:12%;
+                    right:50%;
+                    z-index:-1;
+                    width: 60%;
+                    height: 70%;
+                    background-image: url('../assets/blue-placeholder.svg');
+                    background-size: cover;
+                    transform: rotate(0deg);
+                }
+            }
         }
     }
     .contact{
@@ -466,11 +625,23 @@
         @include breakpoint-down(medium){
             padding: 0px;
         }
+        @include breakpoint-down(small){
+            padding:0px 15px;
+        }
+        &__header{
+            @include breakpoint-down(small){
+                flex-wrap: wrap;
+            }
+        }
         &__header-text{
             margin:20px 0px;
             width: 50%;
             @include breakpoint-down(medium){
                 padding: 0px 80px;
+            }
+            @include breakpoint-down(small){
+                width: 100%;
+                padding: 0px;
             }
         }
         &__header-btn {
@@ -488,10 +659,17 @@
         }
         &__article{
             margin-bottom: 50px;
+            @include breakpoint-down(small){
+                margin-top: 20px;
+                flex-wrap: wrap;
+            }
             img{
                 width: 25%;
                 @include breakpoint-down(medium){
                     width: 35%;
+                }
+                @include breakpoint-down(small){
+                    width: 100%;
                 }
             }
         }
@@ -502,6 +680,9 @@
             box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
             @include breakpoint-down(medium){
                 padding: 0px 50px;
+            }
+            @include breakpoint-down(small){
+                padding: 25px 50px;
             }
             p{
                 width: 65%;
@@ -534,18 +715,31 @@
             @include breakpoint-down(medium){
                 width: 85%;
             }
+            @include breakpoint-down(small){
+                flex-wrap: wrap;
+            }
         }
         &__form-text{
+            width: 50%;
             h2{
                 margin: 10px 0px;
             }
-            width: 50%;
+            @include breakpoint-down(medium-sm){
+                width: 49%;
+            }
+            @include breakpoint-down(small){
+                width: 100%;
+            }
+       
         }
         &__input{
             width: 50%;
             padding:5px;
             background-color: whitesmoke;
             border-radius: 25px;
+            @include breakpoint-down(small){
+                width: 100%;
+            }
             input{
                 padding:0px 15px;
                 width: 60%;
@@ -571,6 +765,9 @@
             &:hover{
                 opacity: 0.9;
             }
+            @include breakpoint-down(small){
+              padding: 10px 25px;
+            }
         }
     }
     .footer{
@@ -582,6 +779,28 @@
         background-color: rgb(229, 221, 241);
         @include breakpoint-down(large){
             padding:100px 80px 30px 80px;            
+        }
+        @include breakpoint-down(small){
+            padding: 100px 15px 30px;
+            .row{
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            &__column-1{
+                min-width: 100%;
+                .footer__icons{
+                    margin:0px auto 20px;
+                    width: 50%;
+                }
+            }
+            &__column-2{
+                margin-left: auto;
+            }
+            &__column-2,
+            &__column-3,
+            &__column-4{
+                min-width: 25%;
+            }
         }
         &__column-1{
             width: 150px;

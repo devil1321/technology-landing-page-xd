@@ -56,6 +56,12 @@
         @media (max-device-width:568px) and (orientation:landscape){
             height: 250vh;
         }
+        @media (device-width:540px) and (device-height:720px) and (orientation:portrait){
+            height: 110vh;
+        }
+        @media (device-width:720px) and (device-height:540px) and (orientation:landscape){
+            height: 150vh;
+        }
         &::after{
             content: '';
             position: absolute;
@@ -106,7 +112,7 @@
                 background-position: 40% 70%;
                 background-size: 450%;
             }
-            @media (max-device-width:411px) {
+            @media (device-width:411px) {
                 background-position: 40% 40%;
             }
             @media (max-device-width:320px) {
@@ -117,6 +123,9 @@
             }
             @media (max-device-width:568px) and (orientation:landscape){
                 background-position: 40% 85%;
+            }
+            @media (device-width:540px) and (device-height:720px) and (orientation:portrait){
+                background-position: 40% 80%;
             }
         }
         .nav{   

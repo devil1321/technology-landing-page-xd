@@ -13,6 +13,18 @@ navItems.forEach(item=>item.addEventListener('mouseleave',(e)=>{
     })
 }))
 
+window.addEventListener('resize',()=>{
+    if(window.innerWidth > 768){
+        overlay.style.opacity = '0'
+        overlay.style.visibility = 'hidden'
+        navBtn.classList.remove('open')
+        navList.style.height = "100%"
+        navItems.forEach(item=>item.style.opacity = 1)
+    }else if(window.innerWidth <= 768){
+        navItems.forEach(item=> item.style.opacity = 0)
+        navList.style.height = "0vh"    
+    }
+})
 
 const handleNav = () =>{
     if(!navBtn.classList.contains('open')){
@@ -20,7 +32,10 @@ const handleNav = () =>{
         navList.style.height = "30vh"
         overlay.style.opacity = '1'
         overlay.style.visibility = 'visible'
-        if(window.innerWidth < 768){
+        if(window.innerHeight < window.innerWidth){
+            navList.style.height = "85vh"
+        }
+        else if(window.innerWidth < 768){
             navList.style.height = "45vh"
         }
 

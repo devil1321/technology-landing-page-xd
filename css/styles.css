@@ -579,6 +579,18 @@ p {
   }
 }
 
+@media (device-width: 540px) and (device-height: 720px) and (orientation: portrait) {
+  .container .header {
+    height: 110vh;
+  }
+}
+
+@media (device-width: 720px) and (device-height: 540px) and (orientation: landscape) {
+  .container .header {
+    height: 150vh;
+  }
+}
+
 .container .header::after {
   content: '';
   position: absolute;
@@ -653,7 +665,7 @@ p {
   }
 }
 
-@media (max-device-width: 411px) {
+@media (device-width: 411px) {
   .container .header::before {
     background-position: 40% 40%;
   }
@@ -674,6 +686,12 @@ p {
 @media (max-device-width: 568px) and (orientation: landscape) {
   .container .header::before {
     background-position: 40% 85%;
+  }
+}
+
+@media (device-width: 540px) and (device-height: 720px) and (orientation: portrait) {
+  .container .header::before {
+    background-position: 40% 80%;
   }
 }
 

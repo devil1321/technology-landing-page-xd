@@ -13,7 +13,8 @@ navItems.forEach(item=>item.addEventListener('mouseleave',(e)=>{
     })
 }))
 
-window.addEventListener('resize',(e)=>{
+
+const handleNavChange = () =>{
     let userHasScrolled = false
     window.onscroll = function (e){
         userHasScrolled = true;
@@ -29,12 +30,15 @@ window.addEventListener('resize',(e)=>{
             navItems.forEach(item=> item.style.opacity = 0)
             navList.style.height = "0vh"    
             navBtn.classList.remove('open')
-            overlay.style.opacity = '0'
-            overlay.style.visibility = 'hidden'
         }
     }
+}
+window.addEventListener('resize',(e)=>{
+    handleNavChange()
 })
-
+window.addEventListener('orientationchange',(e)=>{
+    handleNavChange()
+})
 const handleNav = () =>{
     navBtn.classList.toggle('open')
     if(navBtn.classList.contains('open')){
